@@ -25,4 +25,6 @@ Route::get('/insert-state', 'InsertController@insertStateData');
 
 Route::get('/insert-user', 'InsertController@insertUserData');
 
-Route::get('/test', 'TaskController@test');
+Route::get('/test-state', 'TaskController@testState');
+
+Route::get('/test-city', 'TaskController@testCity');

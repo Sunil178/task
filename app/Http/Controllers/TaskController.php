@@ -54,9 +54,15 @@ class TaskController extends Controller
     	return $response;    	
     }
 
-    public function test() {
-    	$response = TaskController::getData();
-    	// dd($response["time"]);
-    	return $response;
+    public function testState() {
+    	$states = DB::select('SELECT id, state_name FROM states');
+    	$states = json_encode($states);
+    	return $states;
+    }
+
+    public function testCity() {
+    	$cities = DB::select('SELECT id, state_name FROM city_masters');
+    	$cities = json_encode($cities);
+    	return $cities;
     }
 }
