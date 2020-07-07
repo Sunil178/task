@@ -17,4 +17,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/get-data', 'TaskController@getData');
+Route::get('/get-user', 'TaskController@getData');
+
+Route::get('/get-specific-user/{city}/{state}', 'TaskController@getSpecificData');
