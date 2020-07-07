@@ -17,6 +17,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/get-user', 'TaskController@getData');
+Route::get('/get-all-user', 'TaskController@getAllData');
 
 Route::get('/get-specific-user/{city}/{state}', 'TaskController@getSpecificData');
+
+Route::get('/get-all-city', 'TaskController@getAllCity');
+
+Route::get('/get-all-state', 'TaskController@getAllState');

@@ -10,7 +10,7 @@ use DB;
 
 class TaskController extends Controller
 {
-    public function getData() {
+    public function getAllData() {
     	$start_time = microtime(true);
     	$users = DB::select('SELECT id, name FROM users');
     	$end_time = microtime(true);
@@ -30,6 +30,28 @@ class TaskController extends Controller
     	$response["data"] = json_encode($users);
     	$response["time"] = $time;
     	return $response;
+    }
+
+    public function getAllCity() {
+    	$start_time = microtime(true);
+    	$cities = DB::select('SELECT id, city_name FROM city_masters');
+    	$end_time = microtime(true);
+    	$time = $end_time - $start_time;
+    	$time = number_format($time, 3);
+    	$response["data"] = json_encode($cities);
+    	$response["time"] = $time;
+    	return $response;
+    }
+
+    public function getAllState() {
+    	$start_time = microtime(true);
+    	$cities = DB::select('SELECT id, state_name FROM states');
+    	$end_time = microtime(true);
+    	$time = $end_time - $start_time;
+    	$time = number_format($time, 3);
+    	$response["data"] = json_encode($cities);
+    	$response["time"] = $time;
+    	return $response;    	
     }
 
     public function test() {
