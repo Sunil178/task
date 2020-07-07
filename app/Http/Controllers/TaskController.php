@@ -56,6 +56,7 @@ class TaskController extends Controller
 
     public function test() {
     	$response = TaskController::getData();
-    	dd($response["time"]);
+    	// dd($response["time"]);
+    	return $response;
     }
 }
