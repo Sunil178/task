@@ -61,7 +61,7 @@ class TaskController extends Controller
     }
 
     public function testCity() {
-    	$cities = DB::select('SELECT id, state_name FROM city_masters');
+    	$cities = DB::select('SELECT id, city_name FROM city_masters');
     	$cities = json_encode($cities);
     	return $cities;
     }
