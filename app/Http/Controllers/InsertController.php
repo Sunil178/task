@@ -37,21 +37,17 @@ class InsertController extends Controller
     	
     	$state_counter = 0;
     	$city_counter = 0;
-    	for ($i = 0; $i < count($temp_users); $i++) {
-    		$user = new User();
-    		$user->name = $temp_users[$i]->name;
-    		// $user->email = $temp_users[$i]->name . $i;
-    		$user->password = "1234";
-    		$user->city_id = $cities[$city_counter]->id;
-    		$user->state_id = $states[$state_counter]->id;
-    		$user->save();
-    		$state_counter++;
-    		$city_counter++;
-    		if ($state_counter == count($states))
-    			$state_counter = 0;
-    		if ($city_counter == count($cities))
-    			$city_counter = 0;
-    	}
+        for ($i = 0; $i < 8; $i++) {
+        	for ($j = 0; $j < count($temp_users); $j++) {
+                DB::table('users')->insert(['name' => $temp_users[$j]->name, 'city_id' => $cities[$city_counter]->id, 'state_id' => $states[$state_counter]->id]);
+        		$state_counter++;
+        		$city_counter++;
+        		if ($state_counter == count($states))
+        			$state_counter = 0;
+        		if ($city_counter == count($cities))
+        			$city_counter = 0;
+        	}
+        }
     	return "User created";
     }
 }

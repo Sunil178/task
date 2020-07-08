@@ -12,7 +12,8 @@ class TaskController extends Controller
 {
     public function getAllData() {
     	$start_time = microtime(true);
-    	$users = DB::select('SELECT id, name FROM users');
+    	// $users = DB::select('SELECT id, name FROM users');
+    	$users = DB::select('CALL select_users;');
     	$end_time = microtime(true);
     	$time = $end_time - $start_time;
     	$time = number_format($time, 3);
