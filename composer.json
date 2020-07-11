@@ -11,8 +11,9 @@
         "php": "^7.1.3",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
+        "laravel/passport": "7.5.1",
         "laravel/tinker": "^1.0",
-        "league/oauth2-server": "^8.1",
+        "league/oauth2-server": "^7.0",
         "symfony/var-dumper": "4.4.x"
     },
     "require-dev": {
