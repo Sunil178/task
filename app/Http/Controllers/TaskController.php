@@ -66,4 +66,13 @@ class TaskController extends Controller
     	$cities = json_encode($cities);
     	return $cities;
     }
+
+
+    public function rechargeResponse($accountId, $txid, $optxid, $transtype) {
+        $response['accountId'] = $accountId;
+        $response['txid'] = $txid;
+        $response['optxid'] = $optxid;
+        $response['transtype'] = $transtype;
+        return $response;
+    }
 }
