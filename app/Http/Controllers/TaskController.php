@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\CityMaster;
 use App\State;
 use App\User;
+use App\Recharge;
 use DB;
 
 class TaskController extends Controller
@@ -69,6 +70,13 @@ class TaskController extends Controller
 
 
     public function rechargeResponse($accountId, $txid, $optxid, $transtype) {
+
+        $recharge = new Recharge();
+        $recharge->accountId = $accountId;
+        $recharge->txid = $txid;
+        $recharge->optxid = $optxid;
+        $recharge->transtype = $transtype;
+        $recharge->save();
         $response['accountId'] = $accountId;
         $response['txid'] = $txid;
         $response['optxid'] = $optxid;
