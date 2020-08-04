@@ -30,3 +30,5 @@ Route::get('/test-state', 'TaskController@testState');
 Route::get('/test-city', 'TaskController@testCity');
 
 Route::any('recharge-response/{accountId}/{txid}/{optxid}/{transtype}', 'TaskController@rechargeResponse');
+
+Route::get('recharge-request', 'TaskController@rechargeRequest');
