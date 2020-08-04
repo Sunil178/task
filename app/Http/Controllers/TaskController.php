@@ -87,7 +87,7 @@ class TaskController extends Controller
     public function rechargeRequest () {
         $client_key = 'CK' . time();
         $ch = curl_init();
-        $url = 'http://rechargepay.biz/api.php?username=9819626638&password=9838&number=8369465281&operator=6&amount=11&txid=' . $client_key;
+        $url = 'http://rechargepay.biz/api.php?username=9819626638&password=9838&number=8369465281&operator=5&amount=11&txid=' . $client_key;
         // $url = 'http://rechargepay.biz/api.php?username=9819626638&password=9838&number=8450912186&operator=1&amount=11&txid=' . $client_key;
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
